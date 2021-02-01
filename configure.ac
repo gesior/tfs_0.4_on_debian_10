@@ -144,7 +144,7 @@ AC_CHECK_FUNCS([ceil floor ftime gethostbyname gethostname memset pow sqrt strca
 
 # check for xml2
 AM_PATH_XML2(2.6.5, , AC_MSG_ERROR([You need libxml2 >= 2.6.5 to compile theforgottenserver!]))
-LIBS="$LIBS $XML_LIBS"
+LIBS="$LIBS $XML_LIBS -lpthread"
 
 # check for gmp
 AC_CHECK_HEADERS([gmp.h], ,[AC_MSG_ERROR("gmp header not found.")])
