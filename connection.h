@@ -53,6 +53,9 @@ struct ConnectBlock
 	uint64_t startTime, blockTime;
 };
 
+static constexpr int32_t CONNECTION_WRITE_TIMEOUT = 30;
+static constexpr int32_t CONNECTION_READ_TIMEOUT = 30;
+
 class Protocol;
 class ConnectionManager
 {
@@ -90,8 +93,6 @@ class ConnectionManager
 class Connection : public boost::enable_shared_from_this<Connection>, boost::noncopyable
 {
 	public:
-		enum {writeTimeout = 30};
-		enum {readTimeout = 30};
 
 		enum ConnectionState_t
 		{
