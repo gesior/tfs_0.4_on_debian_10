@@ -134,7 +134,7 @@ bool TalkActions::registerEvent(Event* event, xmlNodePtr p, bool override)
 
 bool TalkActions::onPlayerSay(Creature* creature, uint16_t channelId, const std::string& words, bool ignoreAccess)
 {
-	std::string cmd[TALKFILTER_LAST] = words, param[TALKFILTER_LAST] = "";
+	std::string cmd[TALKFILTER_LAST] = {words, words, words}, param[TALKFILTER_LAST] = {"", "", ""};
 	std::string::size_type loc = words.find('"', 0);
 	if(loc != std::string::npos)
 	{
